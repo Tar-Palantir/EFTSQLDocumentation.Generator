@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="connStr_Empty" xml:space="preserve">
+    <value>请填写数据库连接字符串！</value>
+  </data>
+  <data name="inputFileName_Empty" xml:space="preserve">
+    <value>请填写源Edmx文件的物理路径！</value>
+  </data>
+  <data name="xmlns_Empty" xml:space="preserve">
+    <value>请填写Edmx中的xmlns命名空间（每个版本可能不一样）！</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>宾果，操作成功！</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EFTSQLDocumentation_Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Libs\EFTSQLDocumentation.Generator.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MySql_Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Libs\MySql.Data.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

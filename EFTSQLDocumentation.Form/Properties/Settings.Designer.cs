@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace edmx_form.Properties
+namespace EFTSQLDocumentation.Form.Properties
 {
 
 

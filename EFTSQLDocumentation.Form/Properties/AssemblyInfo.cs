@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("edmx_form")]
+[assembly: AssemblyTitle("EFTSQLDocumentation.Form")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("edmx_form")]
+[assembly: AssemblyProduct("EFTSQLDocumentation.Form")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("cde6b8c4-c877-452e-979c-8e6a95f61508")]
+[assembly: Guid("6650f8f8-91fd-4efe-90f9-d7a32151da36")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
