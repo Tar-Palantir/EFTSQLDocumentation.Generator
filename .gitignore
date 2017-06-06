@@ -2,3 +2,4 @@ bin
 obj
 *.user
 packages/*
+/.vs/EFTSQLDocumentation.Generator/v14/*.suo
