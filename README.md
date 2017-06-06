@@ -22,7 +22,9 @@ Arguments
 * InputFileName ... original edmx file
 * OutputFileName ... output edmx file - Default : original edmx file
 * Xmlns ... edmx xml namespace
+* SqlClient ... selected index in database server combobox
 
 Download
 ========
 
+[EFTSQLDocumentation.FormV1.0](https://github.com/Tar-Palantir/EFTSQLDocumentation.Generator/releases/download/1.0/EFTSQLDocumentation.FormV1.0.zip)
