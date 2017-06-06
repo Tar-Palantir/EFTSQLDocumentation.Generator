@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="connStr_Empty" xml:space="preserve">
-    <value>Please enter the connection string!</value>
-  </data>
-  <data name="inputFileName_Empty" xml:space="preserve">
-    <value>Please enter the source edmx file path!</value>
-  </data>
-  <data name="xmlns_Empty" xml:space="preserve">
-    <value>Please enter the xmlns of edmx!</value>
-  </data>
-  <data name="success" xml:space="preserve">
-    <value>Duang! Success!</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EFTSQLDocumentation_Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Libs\EFTSQLDocumentation.Generator.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="MySql_Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Libs\MySql.Data.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnSave_Import" xml:space="preserve">
-    <value>Import</value>
-  </data>
-  <data name="btnSave_Importing" xml:space="preserve">
-    <value>Importing...</value>
-  </data>
-  <data name="errorMsgBoxTitle" xml:space="preserve">
-    <value>Error</value>
-  </data>
 </root>

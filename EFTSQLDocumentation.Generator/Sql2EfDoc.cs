@@ -6,31 +6,21 @@ using EFTSQLDocumentation.Generator.SqlClient;
 
 namespace EFTSQLDocumentation.Generator
 {
-    /// <summary>修改数据库映射到EF edmx文件，为其添加数据库表、列注释</summary>
     public class Sql2EfDoc : IDisposable
     {
-        /// <summary>数据库连接字符串</summary>
         internal string ConnStr { get; set; }
-
-        /// <summary>输入文件（绝对路径）</summary>
+        
         internal string InputFileName { get; set; }
-
-        /// <summary>输出文件（绝对路径）</summary>
+        
         internal string OutputFileName { get; set; }
 
         internal ISqlClient SqlClient { get; set; }
-
-        /// <summary>Xmlns命名空间</summary>
+        
         internal string XmlnsNameSpace { get; set; }
 
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        /// <param name="connStr"></param>
-        /// <param name="inputFileName"></param>
-        /// <param name="outputFileName"></param>
-        /// <param name="xmlnsNameSpace"></param>
-        /// <param name="clientType"></param>
+        public Action OnFinish;
+        public Action<Exception> OnException;
+
         public Sql2EfDoc(string connStr, string inputFileName, string outputFileName, string xmlnsNameSpace, EnumSqlClient clientType)
         {
             ConnStr = connStr;
@@ -44,35 +34,44 @@ namespace EFTSQLDocumentation.Generator
         {
             SqlClient?.Dispose();
         }
-
-        /// <summary>创建注释文本</summary>
+        
         public void CreateDocumentation()
         {
-            SqlClient.ConnectionOpen(ConnStr);
-            var doc = XDocument.Load(InputFileName);
-            var entityTypeElements = doc.Descendants("{" + XmlnsNameSpace + "}EntityType");
-            foreach (var entityTypeElement in entityTypeElements)
+            try
             {
-                var tableName = entityTypeElement.Attribute("Name").Value;
-                var propertyElements = entityTypeElement.Descendants("{" + XmlnsNameSpace + "}Property");
-                AddNodeDocumentation(entityTypeElement, SqlClient.GetTableDocumentation(tableName));
-                foreach (var propertyElement in propertyElements)
+                SqlClient.ConnectionOpen(ConnStr);
+                var doc = XDocument.Load(InputFileName);
+                var entityTypeElements = doc.Descendants("{" + XmlnsNameSpace + "}EntityType");
+                foreach (var entityTypeElement in entityTypeElements)
                 {
-                    var columnName = propertyElement.Attribute("Name").Value;
-                    AddNodeDocumentation(propertyElement, SqlClient.GetColumnDocumentation(tableName, columnName));
+                    var tableName = entityTypeElement.Attribute("Name").Value;
+                    var propertyElements = entityTypeElement.Descendants("{" + XmlnsNameSpace + "}Property");
+                    AddNodeDocumentation(entityTypeElement, SqlClient.GetTableDocumentation(tableName));
+                    foreach (var propertyElement in propertyElements)
+                    {
+                        var columnName = propertyElement.Attribute("Name").Value;
+                        AddNodeDocumentation(propertyElement, SqlClient.GetColumnDocumentation(tableName, columnName));
+                    }
                 }
+                if (File.Exists(OutputFileName))
+                {
+                    File.Delete(OutputFileName);
+                }
+                doc.Save(OutputFileName);
+
+                OnFinish?.BeginInvoke(null, null);
+
             }
-            if (File.Exists(OutputFileName))
+            catch (Exception ex)
             {
-                File.Delete(OutputFileName);
+                OnException?.BeginInvoke(ex, null, null);
             }
-            doc.Save(OutputFileName);
+            finally
+            {
+                Dispose();
+            }
         }
-        /// <summary>
-        /// 给指定的Xml节点添加文档说明
-        /// </summary>
-        /// <param name="element"></param>
-        /// <param name="documentation"></param>
+
         private void AddNodeDocumentation(XElement element, string documentation)
         {
             if (string.IsNullOrEmpty(documentation))

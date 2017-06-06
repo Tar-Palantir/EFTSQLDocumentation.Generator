@@ -61,7 +61,25 @@ namespace EFTSQLDocumentation.Form.Properties {
         }
         
         /// <summary>
-        ///   查找类似 请填写数据库连接字符串！ 的本地化字符串。
+        ///   查找类似 Import 的本地化字符串。
+        /// </summary>
+        internal static string btnSave_Import {
+            get {
+                return ResourceManager.GetString("btnSave_Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Importing... 的本地化字符串。
+        /// </summary>
+        internal static string btnSave_Importing {
+            get {
+                return ResourceManager.GetString("btnSave_Importing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please enter the connection string! 的本地化字符串。
         /// </summary>
         internal static string connStr_Empty {
             get {
@@ -80,7 +98,16 @@ namespace EFTSQLDocumentation.Form.Properties {
         }
         
         /// <summary>
-        ///   查找类似 请填写源Edmx文件的物理路径！ 的本地化字符串。
+        ///   查找类似 Error 的本地化字符串。
+        /// </summary>
+        internal static string errorMsgBoxTitle {
+            get {
+                return ResourceManager.GetString("errorMsgBoxTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please enter the source edmx file path! 的本地化字符串。
         /// </summary>
         internal static string inputFileName_Empty {
             get {
@@ -99,7 +126,7 @@ namespace EFTSQLDocumentation.Form.Properties {
         }
         
         /// <summary>
-        ///   查找类似 宾果，操作成功！ 的本地化字符串。
+        ///   查找类似 Duang! Success! 的本地化字符串。
         /// </summary>
         internal static string success {
             get {
@@ -108,7 +135,7 @@ namespace EFTSQLDocumentation.Form.Properties {
         }
         
         /// <summary>
-        ///   查找类似 请填写Edmx中的xmlns命名空间（每个版本可能不一样）！ 的本地化字符串。
+        ///   查找类似 Please enter the xmlns of edmx! 的本地化字符串。
         /// </summary>
         internal static string xmlns_Empty {
             get {
